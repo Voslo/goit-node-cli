@@ -20,6 +20,7 @@ async function listContacts() {
     if(index!==-1){
         const [removeContact] = contacts.splice(index, 1);
         await fs.writeFile(contactsPath, JSON.stringify(contacts))
+        return removeContact
     }
     return null;
   }
